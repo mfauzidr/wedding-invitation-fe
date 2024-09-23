@@ -17,8 +17,12 @@ export default {
         'great-vibes': ['Great Vibes', 'cursive'],
       },
       colors: {
-        maroon: '#603235'
-      }
+        maroon: '#603235',
+        grey: '#807b76'
+      },
+      fontSize: {
+        '4.5xl': '2.5rem', // Contoh ukuran font untuk 4.5xl (40px)
+      },
     },
   },
   plugins: [],

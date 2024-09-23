@@ -12,7 +12,7 @@ import Gallery from './pages/Gallery';
 import Rsvp from './pages/Rsvp';
 import WeddingGift from './pages/WeddingGift';
 
-const username = 'User';
+const username = 'Invited Person';
 
 
 const router = createBrowserRouter([

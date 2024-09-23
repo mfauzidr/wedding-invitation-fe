@@ -608,6 +608,46 @@ video {
   margin-top: -100px;
 }
 
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
+.-mt-20 {
+  margin-top: -5rem;
+}
+
+.-mt-8 {
+  margin-top: -2rem;
+}
+
+.-mt-10 {
+  margin-top: -2.5rem;
+}
+
+.-mt-\[42px\] {
+  margin-top: -42px;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.mt-\[38px\] {
+  margin-top: 38px;
+}
+
+.-mt-\[38px\] {
+  margin-top: -38px;
+}
+
+.-mt-\[36px\] {
+  margin-top: -36px;
+}
+
 .flex {
   display: flex;
 }
@@ -644,6 +684,22 @@ video {
   height: 123px;
 }
 
+.h-\[53px\] {
+  height: 53px;
+}
+
+.h-\[39\] {
+  height: 39;
+}
+
+.h-\[39px\] {
+  height: 39px;
+}
+
+.h-\[109px\] {
+  height: 109px;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -671,6 +727,18 @@ video {
 
 .w-\[310px\] {
   width: 310px;
+}
+
+.w-\[328px\] {
+  width: 328px;
+}
+
+.w-\[272\] {
+  width: 272;
+}
+
+.w-\[272px\] {
+  width: 272px;
 }
 
 .-translate-y-1\/2 {
@@ -812,6 +880,10 @@ video {
   font-family: Cinzel Decorative, serif;
 }
 
+.font-the-seasons {
+  font-family: The Seasons, serif;
+}
+
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -835,6 +907,16 @@ video {
 .text-sm\/\[11px\] {
   font-size: 0.875rem;
   line-height: 11px;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-xs\/\[8px\] {
+  font-size: 0.75rem;
+  line-height: 8px;
 }
 
 .font-bold {

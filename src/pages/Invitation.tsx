@@ -4,6 +4,9 @@ import leftHead from '../assets/images/LeftHead.png'
 import rightHead from '../assets/images/RightHead.png'
 import ring from '../assets/images/Rings.png'
 import andLine from '../assets/images/andLine.png'
+import frame from '../assets/images/frameName.png'
+import inviteButton from '../assets/images/inviteButton.png'
+import bottomRose from '../assets/images/bottomRose.png'
 
 
 interface Username {
@@ -32,6 +35,22 @@ const Invitation = ({ username }: Username) => {
         <p className='font-cinzel-decorative mt-[3px] text-sm/[11px] tracking-[.25em]'>wedding invitation</p>
         <div className='relative -mt-[100px]'>
           <img src={andLine} className='w-[310px] h-[123px] shadow-2xl' />
+        </div>
+        <p className='font-bellefair mt-6'>Kepada Yth. Bapak/Ibu/Sdra/i:</p>
+        <div className='flex flex-col mt-5 items-center justify-center'>
+          <img src={frame} className='w-[328px] h-[53px]' />
+          <div className='relative font-the-seasons text-white text-xl -mt-[42px]'>
+            {username}
+          </div>
+        </div>
+        <div className='flex font-bellefair mt-6 text-xs/[8px]'>
+          Mohon maaf bila ada salah penulisan nama / gelar.
+        </div>
+        <button className='w-[272px] h-[39px] mt-[38px]' >
+          <img src={inviteButton} />
+        </button>
+        <div className='relative w-full h-[109px] -mt-[36px]'>
+          <img src={bottomRose} alt="" />
         </div>
       </div>
 

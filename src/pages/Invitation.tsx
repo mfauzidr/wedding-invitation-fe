@@ -36,21 +36,21 @@ const Invitation = ({ username }: Username) => {
         <div className='relative -mt-[100px]'>
           <img src={andLine} className='w-[310px] h-[123px] shadow-2xl' />
         </div>
-        <p className='font-bellefair mt-6'>Kepada Yth. Bapak/Ibu/Sdra/i:</p>
+        <p className='font-bellefair mt-6 md:mt-3'>Kepada Yth. Bapak/Ibu/Sdra/i:</p>
         <div className='flex flex-col mt-5 items-center justify-center'>
-          <img src={frame} className='w-[328px] h-[53px]' />
-          <div className='relative font-the-seasons text-white text-xl -mt-[42px]'>
+          <img src={frame} className='w-[328px] md:w-64 h-[53px] md:h-10' />
+          <div className='relative font-the-seasons text-white text-xl -mt-[42px] md:-mt-9'>
             {username}
           </div>
         </div>
-        <div className='flex font-bellefair mt-6 text-xs/[8px]'>
+        <div className='flex font-bellefair mt-6 md:mt-[14px] text-xs/[8px]'>
           Mohon maaf bila ada salah penulisan nama / gelar.
         </div>
-        <button className='w-[272px] h-[39px] mt-[38px]' >
+        <button type='button' className='w-[272px] md:w-64 h-[39px] md:h-8 mt-[38px] md:mt-7' >
           <img src={inviteButton} />
         </button>
-        <div className='relative w-full h-[109px] -mt-[36px]'>
-          <img src={bottomRose} alt="" />
+        <div className='relative w-full h-[109px] -mt-9 md:-mt-20'>
+          <img src={bottomRose} alt="Bottom Rose" className='w-full h-full object-cover' />
         </div>
       </div>
 

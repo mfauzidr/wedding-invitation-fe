@@ -46,7 +46,7 @@ const Invitation = ({ username }: Username) => {
         <div className='flex font-bellefair mt-6 md:mt-[14px] text-xs/[8px]'>
           Mohon maaf bila ada salah penulisan nama / gelar.
         </div>
-        <button type='button' className='w-[272px] md:w-64 h-[39px] md:h-8 mt-[38px] md:mt-7' >
+        <button type='button' className='relative flex w-[272px] md:w-64 h-[39px] md:h-8 mt-[38px] md:mt-7 hover:cursor-pointer z-10' >
           <img src={inviteButton} />
         </button>
         <div className='relative w-full h-[109px] -mt-9 md:-mt-20'>

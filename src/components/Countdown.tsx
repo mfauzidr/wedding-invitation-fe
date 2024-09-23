@@ -44,14 +44,14 @@ const Count: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex justify-center gap-4 mt-10">
+    <div className="relative flex justify-center gap-4 -mb-16 font-bellefair bottom-0">
       {Object.keys(timeLeft).map((interval, index) => (
         <div
           key={index}
-          className="bg-white bg-opacity-80 rounded-lg p-4 w-[80px] text-center shadow-md"
+          className="bg-white bg-opacity-80 rounded-lg p-2 w-[70px] h-[80px] text-center shadow-md"
         >
-          <p className="text-maroon text-4xl font-bold">{timeLeft[interval as keyof TimeLeft]}</p>
-          <p className="text-maroon text-sm mt-2">{interval.charAt(0).toUpperCase() + interval.slice(1)}</p>
+          <p className="text-maroon text-3xl font-bold">{timeLeft[interval as keyof TimeLeft]}</p>
+          <p className="text-maroon text-md mt-1">{interval.charAt(0).toUpperCase() + interval.slice(1)}</p>
         </div>
       ))}
     </div>

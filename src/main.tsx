@@ -17,7 +17,7 @@ const username = 'User';
 
 const router = createBrowserRouter([
   {
-    path: `/${username}`,
+    path: `/`,
     element: <Home username={username} />,
     children: [
       { path: "invitation", element: <Invitation username={username} /> },

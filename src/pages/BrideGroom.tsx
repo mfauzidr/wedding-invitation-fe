@@ -5,6 +5,7 @@ import bottomRoseFoot from '../assets/images/bottomRoseFoot.png';
 import bg from '../assets/images/bg-brideGroom.jpg';
 import groom from '../assets/images/groom.png'
 import bride from '../assets/images/bride.png'
+import instaIcon from '../assets/images/instagram-icon.png'
 
 const BrideGroom = () => {
   return (
@@ -35,8 +36,8 @@ const BrideGroom = () => {
               <div className='font-cardo text-xs mt-6'>Putra kedua dari
                 Alm. Bpk. Dedi R. & Ibu Dewi A.
               </div>
-              <div className='font-bellefair text-xs mt-6'>
-                Logo <span>@ziiryujin</span>
+              <div className='flex items-center justify-end font-bellefair text-xs mt-6'>
+                <img src={instaIcon} alt="Instagram Icon" className='w-4 h-4' /> <span>@ziiryujin</span>
               </div>
             </div>
           </div>
@@ -53,8 +54,8 @@ const BrideGroom = () => {
               <div className='font-cardo text-xs mt-6'>Putri pertama dari
                 Alm. Bpk. Ridwan G. & Ibu Hamida R.
               </div>
-              <div className='font-bellefair text-xs mt-6'>
-                Logo <span>@frz.pramsr23</span>
+              <div className='flex items-center justify-start font-bellefair text-xs mt-6'>
+                <img src={instaIcon} alt="Instagram Icon" className='w-4 h-4' />  <span>@frz.pramsr23</span>
               </div>
             </div>
           </div>

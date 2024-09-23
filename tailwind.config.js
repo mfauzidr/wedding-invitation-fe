@@ -3,6 +3,11 @@ export default {
   content: ["./src/**/*.tsx"],
   theme: {
     extend: {
+      backgroundPosition: {
+        'custom-mobile': 'left -125px top 0',
+        'custom-md': 'left top',
+        'custom-lg': 'center top',
+      },
       fontFamily: {
         'cinzel-decorative': ['Cinzel Decorative', 'serif'],
         'bellefair': ['Bellefair', 'serif'],

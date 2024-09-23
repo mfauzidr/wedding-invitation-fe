@@ -23,6 +23,15 @@ export default {
       fontSize: {
         '4.5xl': '2.5rem', // Contoh ukuran font untuk 4.5xl (40px)
       },
+      keyframes: {
+        scroll: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+      },
+      animation: {
+        scroll: 'scroll 240s linear infinite', // 30 detik untuk looping scroll
+      },
     },
   },
   plugins: [],

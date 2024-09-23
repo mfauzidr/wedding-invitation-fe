@@ -15,36 +15,36 @@ interface Username {
 
 const Home = ({ username }: Username) => {
   return (
-    <div className='flex flex-col items-center bg-maroon w-full'>
-      <section id="invitation">
+    <div className='flex flex-col w-full px-0 mx-0 items-center bg-maroon border-0 overflow-x-hidden'>
+      <section className='w-full' id="invitation">
         <Invitation username={username} />
       </section>
 
-      <section id="countdown">
+      <section className='w-full' id="countdown">
         <Countdown />
       </section>
 
-      <section id="bridegroom">
+      <section className='w-full' id="bridegroom">
         <BrideGroom />
       </section>
 
-      <section id="wedding-info">
+      <section className='w-full' id="wedding-info">
         <WeddingInfo />
       </section>
 
-      <section id="love-story">
+      <section className='w-full' id="love-story">
         <LoveStory />
       </section>
 
-      <section id="gallery">
+      <section className='w-full' id="gallery">
         <Gallery />
       </section>
 
-      <section id="rsvp">
+      <section className='w-full' id="rsvp">
         <Rsvp />
       </section>
 
-      <section id="wedding-gift">
+      <section className='w-full' id="wedding-gift">
         <WeddingGift />
       </section>
       <Outlet />

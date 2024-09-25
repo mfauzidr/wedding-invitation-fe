@@ -10,7 +10,6 @@ import WeddingInfo from './pages/WeddingInfo';
 import LoveStory from './pages/LoveStory';
 import Gallery from './pages/Gallery';
 import Rsvp from './pages/Rsvp';
-import WeddingGift from './pages/WeddingGift';
 
 const username = 'Invited Person';
 
@@ -27,7 +26,6 @@ const router = createBrowserRouter([
       { path: "love-story", element: <LoveStory /> },
       { path: "gallery", element: <Gallery /> },
       { path: "rsvp", element: <Rsvp /> },
-      { path: "wedding-gift", element: <WeddingGift /> },
     ],
   },
 ]);

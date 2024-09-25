@@ -1,13 +1,13 @@
 // pages/Invitation.tsx
 import { useState } from 'react';
-import invitationImage from '../assets/images/image-2.jpg';
-import topLeft from '../assets/images/topLeft.png';
-import topRight from '../assets/images/topRight.png';
-import ring from '../assets/images/Rings.png';
-import frame from '../assets/images/frameName.png';
-import inviteButton from '../assets/images/inviteButton.png';
-import bottomLeft from '../assets/images/bottomLeft.png';
-import bottomRight from '../assets/images/bottomRight.png';
+import invitationImage from '../assets/images/image-2.webp';
+import topLeft from '../assets/images/topLeft.webp';
+import topRight from '../assets/images/topRight.webp';
+import ring from '../assets/images/Rings.webp';
+import frame from '../assets/images/frameName.webp';
+import inviteButton from '../assets/images/inviteButton.webp';
+import bottomLeft from '../assets/images/bottomLeft.webp';
+import bottomRight from '../assets/images/bottomRight.webp';
 
 interface Username {
   username: string;

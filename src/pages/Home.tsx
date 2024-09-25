@@ -6,8 +6,9 @@ import Gallery from './Gallery';
 import Invitation from './Invitation';
 import LoveStory from './LoveStory';
 import Rsvp from './Rsvp';
-import WeddingGift from './WeddingGift';
 import WeddingInfo from './WeddingInfo';
+import Audio from '../components/Audio'
+import bgm from '../assets/music/right-here.mp3';
 
 interface Username {
   username: string
@@ -16,6 +17,7 @@ interface Username {
 const Home = ({ username }: Username) => {
   return (
     <div className='flex flex-col w-full items-center bg-maroon overflow-x-hidden'>
+      <Audio src={bgm} volume={0.5} />
       <section className='w-full max-w-md' id="invitation">
         <Invitation username={username} />
       </section>
@@ -42,10 +44,6 @@ const Home = ({ username }: Username) => {
 
       <section className='w-full max-w-md' id="rsvp">
         <Rsvp />
-      </section>
-
-      <section className='w-full max-w-md' id="wedding-gift">
-        <WeddingGift />
       </section>
       <Outlet />
     </div>

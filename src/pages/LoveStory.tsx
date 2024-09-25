@@ -1,13 +1,13 @@
 // pages/LoveStory.tsx
-import topRoseLeft from '../assets/images/topRoseLeft.png'
-import topRoseRight from '../assets/images/topRoseRight.png'
-import middleTop from '../assets/images/middleTop.png'
-import bg from '../assets/images/bg-lovestory.jpg'
-import img2015 from '../assets/images/2015.png'
-import img2020 from '../assets/images/2020.png'
-import img2021 from '../assets/images/2021.png'
-import img2024 from '../assets/images/2024.png'
-import middleBottom from '../assets/images/middleBottom.png'
+import topRoseLeft from '../assets/images/topRoseLeft.webp'
+import topRoseRight from '../assets/images/topRoseRight.webp'
+import middleTop from '../assets/images/middleTop.webp'
+import bg from '../assets/images/bg-lovestory.webp'
+import img2015 from '../assets/images/2015.webp'
+import img2020 from '../assets/images/2020.webp'
+import img2021 from '../assets/images/2021.webp'
+import img2024 from '../assets/images/2024.webp'
+import middleBottom from '../assets/images/middleBottom.webp'
 
 const LoveStory = () => {
   return (
@@ -19,6 +19,7 @@ const LoveStory = () => {
       </div>
 
       <div className="relative z-10 flex flex-col items-center inset-x-0">
+        <div className="absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-maroon to-transparent"></div>
         <div className='absolute flex inset-x-0 justify-between items-start z-20'>
           <img className='w-[46px] h-[109px]' src={topRoseLeft} />
           <div className='flex flex-col mt-6 items-center gap-2'>
@@ -27,10 +28,10 @@ const LoveStory = () => {
           <img className='w-[46px] h-[109px]' src={topRoseRight} />
         </div>
         {/* Header Section */}
-        <div className='font-cinzel-decorative mt-16 text-white text-3xl py-2 border-y'>Our Story</div>
+        <div className='font-cinzel-decorative mt-16 text-white text-3xl py-2 border-y z-10'>Our Story</div>
 
         {/* Text Section */}
-        <div className='flex flex-col gap-6 font-cardo italic text-white mx-8 text-xl/[22px]'>
+        <div className='flex flex-col gap-6 font-cardo italic text-white mx-8 text-xl/[22px] z-10'>
           <div className='flex flex-col justify-center'>
             <div className='flex items-center'>
               <img src={img2015} className='w-[30px] h-[30px]' alt="" />
@@ -72,6 +73,7 @@ const LoveStory = () => {
           </div>
         </div>
       </div>
+      <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-maroon to-transparent"></div>
       <div className='absolute flex inset-x-0 bottom-0 justify-center items-end'>
         <img className='w-[92px] h-[17px] mb-7' src={middleBottom} />
       </div>

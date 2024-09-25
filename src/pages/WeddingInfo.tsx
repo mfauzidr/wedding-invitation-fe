@@ -1,15 +1,15 @@
 // pages/WeddingInfo.tsx
-import topRoseLeft from '../assets/images/topRoseLeft.png'
-import topRoseRight from '../assets/images/topRoseRight.png'
-import middleTop from '../assets/images/middleTop.png'
-import infoImg from '../assets/images/info-img.png';
-import frame from '../assets/images/frame-time.png';
-import houseIcon from '../assets/images/house-icon.png';
-import mapButton from '../assets/images/map-button.png';
+import topRoseLeft from '../assets/images/topRoseLeft.webp'
+import topRoseRight from '../assets/images/topRoseRight.webp'
+import middleTop from '../assets/images/middleTop.webp'
+import infoImg from '../assets/images/info-img.webp';
+import frame from '../assets/images/frame-time.webp';
+import houseIcon from '../assets/images/house-icon.webp';
+import mapButton from '../assets/images/map-button.webp';
 import InfiniteSlider from '../components/Carrousel';
-import bottomLeft from '../assets/images/bottomLeft.png'
-import bottomRight from '../assets/images/bottomRight.png'
-import middleBottom from '../assets/images/middleBottom.png'
+import bottomLeft from '../assets/images/bottomLeft.webp'
+import bottomRight from '../assets/images/bottomRight.webp'
+import middleBottom from '../assets/images/middleBottom.webp'
 
 
 const WeddingInfo = () => {
@@ -24,7 +24,7 @@ const WeddingInfo = () => {
           <img className='w-[46px] h-[109px]' src={topRoseRight} />
         </div>
         <div className='flex flex-col bg-white rounded-[4rem] mx-2 p-3 items-center mt-14'>
-          <div className='font-the-seasons text-3xl text-maroon'>Save The Date</div>
+          <div className='font-the-seasons text-3xl text-maroon z-10'>Save The Date</div>
           <div>
             <img src={infoImg} alt="Image" className='opacity-70 -mt-4' />
           </div>

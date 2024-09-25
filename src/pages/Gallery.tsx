@@ -1,18 +1,18 @@
 // pages/Gallery.tsx
-import topRoseLeft from '../assets/images/topRoseLeft.png'
-import topRoseRight from '../assets/images/topRoseRight.png'
-import middleTop from '../assets/images/middleTop.png'
-import bottomLeft from '../assets/images/bottomLeft.png'
-import bottomRight from '../assets/images/bottomRight.png'
-import middleBottom from '../assets/images/middleBottom.png'
-import gallery1 from '../assets/images/gallery-images/gallery1.jpg';
-import gallery2 from '../assets/images/gallery-images/gallery2.jpg';
-import gallery3 from '../assets/images/gallery-images/gallery3.jpg';
-import gallery4 from '../assets/images/gallery-images/gallery4.jpg';
-import gallery5 from '../assets/images/gallery-images/gallery5.jpg';
-import gallery6 from '../assets/images/gallery-images/gallery6.jpg';
-import gallery7 from '../assets/images/gallery-images/gallery7.jpg';
-import gallery8 from '../assets/images/gallery-images/gallery8.jpg';
+import topRoseLeft from '../assets/images/topRoseLeft.webp'
+import topRoseRight from '../assets/images/topRoseRight.webp'
+import middleTop from '../assets/images/middleTop.webp'
+import bottomLeft from '../assets/images/bottomLeft.webp'
+import bottomRight from '../assets/images/bottomRight.webp'
+import middleBottom from '../assets/images/middleBottom.webp'
+import gallery1 from '../assets/images/gallery-images/gallery1.webp';
+import gallery2 from '../assets/images/gallery-images/gallery2.webp';
+import gallery3 from '../assets/images/gallery-images/gallery3.webp';
+import gallery4 from '../assets/images/gallery-images/gallery4.webp';
+import gallery5 from '../assets/images/gallery-images/gallery5.webp';
+import gallery6 from '../assets/images/gallery-images/gallery6.webp';
+import gallery7 from '../assets/images/gallery-images/gallery7.webp';
+import gallery8 from '../assets/images/gallery-images/gallery8.webp';
 
 const Gallery = () => {
   return (
@@ -60,8 +60,9 @@ const Gallery = () => {
             <div className='flex bg-white w-[112px] h-[142px]'>
               <img src={gallery8} alt="Gallery 8" className='w-full h-full object-cover object-center' />
             </div>
-
           </div>
+
+          <div className='flex items-center justify-center font-cardo text-lg text-white -mb-2'> Photo by : Eza @rezsa_pratama</div>
 
         </div>
 

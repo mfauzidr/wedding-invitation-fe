@@ -1,8 +1,8 @@
 // pages/Countdown.tsx
-import bgCountdown from '../assets/images/image-1.jpg'
+import bgCountdown from '../assets/images/image-1.webp'
 import Count from '../components/Countdown.tsx'
-import bottomLeft from '../assets/images/bottomLeft.png'
-import bottomRight from '../assets/images/bottomRight.png'
+import bottomLeft from '../assets/images/bottomLeft.webp'
+import bottomRight from '../assets/images/bottomRight.webp'
 
 
 const Countdown = () => {
@@ -12,7 +12,7 @@ const Countdown = () => {
       <div className='flex flex-col h-full justify-between relative'>
         <div className='flex flex-col items-end pt-14 pr-10 md:pr-5 text-maroon font-cinzel-decorative'>
           <div className='flex flex-col'>
-            <div className='items-start tracking-[.25em]'>The Wedding Of</div>
+            <div className='items-start tracking-[.25em]'>THe Wedding Of</div>
             <div className='items-start text-4xl/[48px] tracking-[.25em]'>Fauzi &</div>
             <div className='items-start text-4xl/[48px] tracking-[.25em] ml-8'>Fauriza</div>
           </div>

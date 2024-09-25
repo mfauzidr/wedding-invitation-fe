@@ -47,7 +47,10 @@ export default {
         },
       },
       animation: {
-        scroll: 'scroll 240s linear infinite', // 30 detik untuk looping scroll
+        scroll: 'scroll 120s linear infinite', // 30 detik untuk looping scroll
+      },
+      translate: {
+        '-220': '-220%',  // Adding custom translate-x for -200%
       },
     },
   },

@@ -1,20 +1,29 @@
 // pages/WeddingInfo.tsx
-import topRose from '../assets/images/topRose.png';
+import topRoseLeft from '../assets/images/topRoseLeft.png'
+import topRoseRight from '../assets/images/topRoseRight.png'
+import middleTop from '../assets/images/middleTop.png'
 import infoImg from '../assets/images/info-img.png';
 import frame from '../assets/images/frame-time.png';
 import houseIcon from '../assets/images/house-icon.png';
 import mapButton from '../assets/images/map-button.png';
 import InfiniteSlider from '../components/Carrousel';
-import bottomRoseFoot from '../assets/images/bottomRoseFoot.png';
-
+import bottomLeft from '../assets/images/bottomLeft.png'
+import bottomRight from '../assets/images/bottomRight.png'
+import middleBottom from '../assets/images/middleBottom.png'
 
 
 const WeddingInfo = () => {
   return (
-    <div className="relative w-full h-screen bg-maroon">
-      <div className="relative h-screen flex flex-col items-center">
-        <img src={topRose} alt="Top Rose" className="object-cover z-10" />
-        <div className='flex flex-col bg-white rounded-[4rem] mx-2 p-3 items-center -mt-12'>
+    <div className="relative w-full min-h-screen bg-maroon">
+      <div className="relative min-h-screen flex flex-col items-center">
+        <div className='absolute flex inset-x-0 justify-between items-start z-10'>
+          <img className='w-[46px] h-[109px]' src={topRoseLeft} />
+          <div className='flex flex-col mt-6 items-center gap-2'>
+            <img className='w-[92px] h-[17px]' src={middleTop} />
+          </div>
+          <img className='w-[46px] h-[109px]' src={topRoseRight} />
+        </div>
+        <div className='flex flex-col bg-white rounded-[4rem] mx-2 p-3 items-center mt-14'>
           <div className='font-the-seasons text-3xl text-maroon'>Save The Date</div>
           <div>
             <img src={infoImg} alt="Image" className='opacity-70 -mt-4' />
@@ -74,11 +83,13 @@ const WeddingInfo = () => {
           </button>
           <div className='mt-5 font-cardo text-maroon text-sm'>Dress Code : Maroon / Grey</div>
         </div>
-        <div className='mt-5'>
+        <div className='mt-5 mb-14'>
           <InfiniteSlider />
         </div>
-        <div className="relative w-full h-[109px] -mt-12 md:-mt-20">
-          <img src={bottomRoseFoot} alt="Bottom Rose" className="w-full h-full object-cover" />
+        <div className='absolute flex inset-x-0 bottom-0 justify-between items-end z-10'>
+          <img className='w-[46px] h-[109px]' src={bottomLeft} />
+          <img className='w-[92px] h-[17px] mb-7' src={middleBottom} />
+          <img className='w-[46px] h-[109px]' src={bottomRight} />
         </div>
       </div>
     </div>

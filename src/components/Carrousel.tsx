@@ -1,7 +1,8 @@
 // src/components/InfiniteSlider.tsx
 import React from "react";
+import Marquee from "react-fast-marquee";
 
-// Import semua gambar
+// Import all images
 import car1 from "../assets/images/carrousel-images/car-1.png";
 import car2 from "../assets/images/carrousel-images/car-2.png";
 import car3 from "../assets/images/carrousel-images/car-3.png";
@@ -23,7 +24,7 @@ import car18 from "../assets/images/carrousel-images/car-18.png";
 import car19 from "../assets/images/carrousel-images/car-19.png";
 import car20 from "../assets/images/carrousel-images/car-20.png";
 
-// Object berisi semua gambar
+// Object containing all images
 const images = [
   car1, car2, car3, car4, car5, car6, car7, car8, car9, car10,
   car11, car12, car13, car14, car15, car16, car17, car18, car19, car20,
@@ -31,25 +32,20 @@ const images = [
 
 const InfiniteSlider: React.FC = () => {
   return (
-    <div className="overflow-hidden w-full">
-      <div className="flex animate-scroll gap-1">
+    <div className="overflow-hidden max-w-md">
+      <Marquee gradient={false} speed={20}>
         {images.map((image, index) => (
-          <div
-            key={index}
-            className="w-[100px] h-[150px] flex-shrink-0"
-          >
-            <img src={image} alt={`carousel-${index}`} className="object-cover" />
+          <div key={index} className="flex-shrink-0 w-[100px] h-[150px] mx-1">
+            <img src={image} alt={`carousel-${index}`} className="object-cover w-full h-full" />
           </div>
         ))}
         {images.map((image, index) => (
-          <div
-            key={index}
-            className="w-[100px] h-[150px] flex-shrink-0"
-          >
-            <img src={image} alt={`carousel-${index}`} className="object-cover" />
+          <div key={index} className="flex-shrink-0 w-[100px] h-[150px] mx-1">
+            <img src={image} alt={`carousel-${index}`} className="object-cover w-full h-full" />
           </div>
         ))}
-      </div>
+      </Marquee>
+
     </div>
   );
 };

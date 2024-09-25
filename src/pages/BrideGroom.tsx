@@ -1,11 +1,15 @@
 // pages/BrideGroom.tsx
-import topRose from '../assets/images/topRose.png';
-import bismillah from '../assets/images/bismillah.png';
-import bottomRoseFoot from '../assets/images/bottomRoseFoot.png';
+import topRoseLeft from '../assets/images/topRoseLeft.png'
+import topRoseRight from '../assets/images/topRoseRight.png'
+import middleTop from '../assets/images/middleTop.png'
+import bismillah from '../assets/images/bismillah.png'
 import bg from '../assets/images/bg-brideGroom.jpg';
 import groom from '../assets/images/groom.png'
 import bride from '../assets/images/bride.png'
 import instaIcon from '../assets/images/instagram-icon.png'
+import bottomLeft from '../assets/images/bottomLeft.png'
+import bottomRight from '../assets/images/bottomRight.png'
+import middleBottom from '../assets/images/middleBottom.png'
 
 const BrideGroom = () => {
   return (
@@ -18,9 +22,15 @@ const BrideGroom = () => {
 
       {/* Content without opacity */}
       <div className="relative z-10 flex flex-col items-center inset-x-0">
-        <img src={topRose} alt="Top Rose" className="w-full h-full object-cover" />
-        <img src={bismillah} alt="Bismillah" className="relative -mt-16 w-[197px] h-[25px]" />
-        <h2 className="flex text-sm mt-3 font-bellefair text-white text-center w-3/4">
+        <div className='absolute flex inset-x-0 justify-between items-start z-10'>
+          <img className='w-[46px] h-[109px]' src={topRoseLeft} />
+          <div className='flex flex-col mt-6 items-center gap-2'>
+            <img className='w-[92px] h-[17px]' src={middleTop} />
+            <img className='w-[197px] h-[25px]' src={bismillah} />
+          </div>
+          <img className='w-[46px] h-[109px]' src={topRoseRight} />
+        </div>
+        <h2 className="flex text-sm mt-[100px] font-bellefair text-white text-center w-3/4">
           Dengan penuh rasa syukur dan rasa hormat, kami mengundang Bapak/Ibu/Saudara/i sekalian untuk menghadiri acara pernikahan kami:
         </h2>
 
@@ -64,9 +74,11 @@ const BrideGroom = () => {
           </div>
         </div>
 
-        <div className="relative w-full h-[109px] -mt-9 md:-mt-20">
-          <img src={bottomRoseFoot} alt="Bottom Rose" className="w-full h-full object-cover" />
-        </div>
+      </div>
+      <div className='absolute flex inset-x-0 bottom-0 justify-between items-end z-10'>
+        <img className='w-[46px] h-[109px]' src={bottomLeft} />
+        <img className='w-[92px] h-[17px] mb-7' src={middleBottom} />
+        <img className='w-[46px] h-[109px]' src={bottomRight} />
       </div>
     </div>
   );

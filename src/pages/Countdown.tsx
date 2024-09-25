@@ -7,7 +7,7 @@ import bottomRight from '../assets/images/bottomRight.png'
 
 const Countdown = () => {
   return (
-    <div className="h-screen bg-cover bg-no-repeat bg-custom-mobile md:bg-custom-md lg:bg-custom-lg"
+    <div className="h-screen bg-cover bg-no-repeat bg-custom-mobile mobile-l:bg-custom-mobile-l mobile-m:bg-custom-mobile-l md:bg-custom-md lg:bg-custom-lg"
       style={{ backgroundImage: `url(${bgCountdown})` }}>
       <div className='flex flex-col h-full justify-between relative'>
         <div className='flex flex-col items-end pt-14 pr-10 md:pr-5 text-maroon font-cinzel-decorative'>

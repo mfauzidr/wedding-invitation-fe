@@ -619,10 +619,6 @@ video {
   margin-top: -3rem;
 }
 
-.-mt-16 {
-  margin-top: -4rem;
-}
-
 .-mt-28 {
   margin-top: -7rem;
 }
@@ -635,12 +631,12 @@ video {
   margin-top: -1.75rem;
 }
 
-.-mt-9 {
-  margin-top: -2.25rem;
-}
-
 .-mt-\[40px\] {
   margin-top: -40px;
+}
+
+.mb-7 {
+  margin-bottom: 1.75rem;
 }
 
 .mb-8 {
@@ -683,10 +679,6 @@ video {
   margin-top: 0.5rem;
 }
 
-.mt-3 {
-  margin-top: 0.75rem;
-}
-
 .mt-5 {
   margin-top: 1.25rem;
 }
@@ -701,6 +693,10 @@ video {
 
 .mt-8 {
   margin-top: 2rem;
+}
+
+.mt-\[100px\] {
+  margin-top: 100px;
 }
 
 .flex {
@@ -741,6 +737,10 @@ video {
 
 .h-\[150px\] {
   height: 150px;
+}
+
+.h-\[17px\] {
+  height: 17px;
 }
 
 .h-\[25px\] {
@@ -853,6 +853,10 @@ video {
 
 .w-\[77px\] {
   width: 77px;
+}
+
+.w-\[92px\] {
+  width: 92px;
 }
 
 .w-fit {
@@ -1031,7 +1035,7 @@ video {
 }
 
 .bg-custom-mobile {
-  background-position: left -125px top 0;
+  background-position: right -38px top 0;
 }
 
 .bg-no-repeat {
@@ -1269,22 +1273,36 @@ video {
   cursor: pointer;
 }
 
+@media (min-width: 375px) {
+  .mobile-m\:bg-custom-mobile-l {
+    background-position: right top;
+  }
+}
+
+@media (min-width: 425px) {
+  .mobile-l\:bg-custom-mobile-l {
+    background-position: right top;
+  }
+}
+
 @media (min-width: 768px) {
   .md\:-mt-20 {
     margin-top: -5rem;
   }
 
+  .md\:h-\[197px\] {
+    height: 197px;
+  }
+
+  .md\:w-\[94px\] {
+    width: 94px;
+  }
+
   .md\:bg-custom-md {
-    background-position: left top;
+    background-position: right top;
   }
 
   .md\:pr-5 {
     padding-right: 1.25rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .lg\:bg-custom-lg {
-    background-position: center top;
   }
 }

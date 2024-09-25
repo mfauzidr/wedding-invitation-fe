@@ -4,9 +4,25 @@ export default {
   theme: {
     extend: {
       backgroundPosition: {
-        'custom-mobile': 'left -125px top 0',
-        'custom-md': 'left top',
-        'custom-lg': 'center top',
+        // Untuk ukuran mobile kecil (di bawah 375px)
+        'custom-mobile': 'right -38px top 0',
+
+        // Untuk ukuran 375px ke atas
+        'custom-mobile-l': 'right top',
+
+        // Untuk ukuran layar lebih besar
+        'custom-md': 'right top',
+      },
+      screens: {
+        'mobile-m': '375px',
+        // Custom breakpoint untuk mobile m (375px)
+        'mobile-l': '425px',
+
+        // Breakpoint default untuk ukuran lebih besar
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
       },
       fontFamily: {
         'cinzel-decorative': ['Cinzel Decorative', 'serif'],

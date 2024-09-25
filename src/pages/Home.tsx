@@ -15,36 +15,36 @@ interface Username {
 
 const Home = ({ username }: Username) => {
   return (
-    <div className='flex flex-col w-full h-c px-0 mx-0 items-center bg-maroon border-0 overflow-x-hidden'>
-      <section className='w-full md:w-[414px]' id="invitation">
+    <div className='flex flex-col w-full items-center bg-maroon overflow-x-hidden'>
+      <section className='w-full max-w-md' id="invitation">
         <Invitation username={username} />
       </section>
 
-      <section className='w-full md:w-[414px]' id="countdown">
+      <section className='w-full max-w-md' id="countdown">
         <Countdown />
       </section>
 
-      <section className='w-full md:w-[414px]' id="bridegroom">
+      <section className='w-full max-w-md' id="bridegroom">
         <BrideGroom />
       </section>
 
-      <section className='w-full md:w-[414px]' id="wedding-info">
+      <section className='w-full max-w-md' id="wedding-info">
         <WeddingInfo />
       </section>
 
-      <section className='w-full md:w-[414px]' id="love-story">
+      <section className='w-full max-w-md' id="love-story">
         <LoveStory />
       </section>
 
-      <section className='w-full md:w-[414px]' id="gallery">
+      <section className='w-full max-w-md' id="gallery">
         <Gallery />
       </section>
 
-      <section className='w-full md:w-[414px]' id="rsvp">
+      <section className='w-full max-w-md' id="rsvp">
         <Rsvp />
       </section>
 
-      <section className='w-full md:w-[414px]' id="wedding-gift">
+      <section className='w-full max-w-md' id="wedding-gift">
         <WeddingGift />
       </section>
       <Outlet />

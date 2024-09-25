@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Beautifully Delicious";
+  src: url("/src/assets/fonts/BDScript-Regular.woff") format("truetype");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

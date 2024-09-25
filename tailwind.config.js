@@ -15,6 +15,7 @@ export default {
         'lora': ['Lora', 'serif'],
         'cardo': ['Cardo', 'serif'],
         'great-vibes': ['Great Vibes', 'cursive'],
+        'delicious': ['"Beautifully Delicious"', 'cursive'],
       },
       colors: {
         maroon: '#603235',

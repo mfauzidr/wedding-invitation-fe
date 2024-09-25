@@ -11,7 +11,7 @@ import bottomRoseFoot from '../assets/images/bottomRoseFoot.png';
 
 const WeddingInfo = () => {
   return (
-    <div className="w-full h-screen bg-maroon">
+    <div className="relative w-full h-screen bg-maroon">
       <div className="relative h-screen flex flex-col items-center">
         <img src={topRose} alt="Top Rose" className="object-cover z-10" />
         <div className='flex flex-col bg-white rounded-[4rem] mx-2 p-3 items-center -mt-12'>

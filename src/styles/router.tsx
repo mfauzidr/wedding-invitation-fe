@@ -8,7 +8,7 @@ const AppRouter = () => {
   return (
     <Router>
       <Routes>
-        <Route path={`:username`} element={<Home />} />
+        <Route path={`/:username`} element={<Home />} />
       </Routes>
     </Router>
   );

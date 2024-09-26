@@ -78,8 +78,11 @@ const WeddingInfo = () => {
               <div className='font-cardo text-sm text-maroon italic'>Limus Nunggal, Cibeureum, Kota Sukabumi</div>
             </div>
           </div>
-          <button className='mt-5 w-[306px] h-[65px]'>
-            <img src={mapButton} alt="Map Botton" className='object-cover' />
+          <button
+            className='mt-5 w-[306px] h-[65px]'
+            onClick={() => window.open('https://maps.app.goo.gl/bcfHY7EDzugwvgjd6', '_blank', 'noopener noreferrer')}
+          >
+            <img src={mapButton} alt="Map Button" className='object-cover' />
           </button>
           <div className='mt-5 font-cardo text-maroon text-sm'>Dress Code : Maroon / Grey</div>
         </div>

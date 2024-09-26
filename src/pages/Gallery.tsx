@@ -28,32 +28,54 @@ const Gallery = () => {
         <div className='font-cinzel-decorative mt-16 text-white text-3xl py-2 border-y'>Our Gallery</div>
         {/* Gallery Images */}
 
-        <div className="relative flex flex-col w-full px-[26px] mt-4 mb-14 gap-2">
-          <div className='relatve flex flex-col gap-2'>
-            <div className='bg-white h-[113px] w-[247px]'>
-              <img src={gallery1} alt="Gallery 1" className='w-full h-full object-cover object-center' />
+        <div className="relative flex flex-col w-full px-6 mt-4 mb-14 gap-[4px] md:gap-2">
+          <div className='relatve flex flex-col gap-[4px] md:gap-2 justify-between'>
+            <div className='flex gap-[6px] md:gap-2 justify-between'>
+              <div className='bg-white h-[111px] md:h-[117px] w-[235px] md:w-[248px] overflow-hidden'>
+                <img src={gallery1} alt="Gallery 1" className='w-full h-full object-cover object-center' />
+              </div>
+              <div className='w-[134px] md:w-[144px]'></div>
             </div>
-            <div className='bg-white h-[264px] w-[142px]'>
-              <img src={gallery2} alt="Gallery 2" className='w-full h-full object-cover object-center' />
-            </div>
-          </div>
-          <div className='relative flex justify-center -mt-[272px]'>
-            <div className='bg-white w-[98px] h-[142px]'>
-              <img src={gallery3} alt="Gallery 3" className='w-full h-full object-cover object-center' />
-            </div>
-          </div>
-          <div className='relatve flex flex-col gap-2 -mt-[271px] items-end'>
-            <div className='bg-white h-[264px] w-[142px]'>
-              <img src={gallery4} alt="Gallery 4" className='w-full h-full object-cover object-center' />
-            </div>
-            <div className='bg-white h-[113px] w-[247px]'>
-              <img src={gallery5} alt="Gallery 5" className='w-full h-full object-cover object-center' />
+            <div className='flex gap-[6px] md:gap-2 justify-between'>
+              <div className='bg-white h-[257px] md:h-[269px] w-[134px] md:w-[144px] overflow-hidden'>
+                <img src={gallery2} alt="Gallery 2" className='w-full h-full object-cover object-bottom' />
+              </div>
+              <div className='w-[235px] md:w-[248px]'></div>
             </div>
           </div>
-          <div className='bg-white flex w-full h-[182px]'>
+          <div className='relative flex justify-between -mt-[259px] md:-mt-[278px]'>
+            <div className='flex gap-[6px] md:gap-2 justify-between w-full'>
+              <div className='w-[134px] md:w-[144px]'></div>
+              <div className='bg-white w-[92px] md:w-[96px] h-[138px] md:h-[144px] overflow-hidden'>
+                <img src={gallery3} alt="Gallery 3" className='w-full h-full object-cover object-center' />
+              </div>
+              <div className='w-[134px] md:w-[144px]'></div>
+            </div>
+          </div>
+          <div className='relatve flex flex-col gap-[6px] md:gap-2 -mt-[259px] md:-mt-[278px]'>
+            <div className='relatve flex flex-col gap-[4px] md:gap-2 justify-between'>
+
+              <div className='flex gap-[6px] md:gap-2 justify-between'>
+                <div className='w-[235px] md:w-[248px]'></div>
+                <div className='bg-white h-[257px] md:h-[269px] w-[134px] md:w-[144px] overflow-hidden'>
+                  <img src={gallery4} alt="Gallery 4" className='w-full h-full object-cover object-bottom' />
+                </div>
+
+              </div>
+              <div className='flex gap-[6px] md:gap-2 justify-between'>
+
+                <div className='w-[134px] md:w-[144px]'></div>
+                <div className='bg-white h-[111px] md:h-[117px] w-[234px] md:w-[248px] overflow-hidden'>
+                  <img src={gallery5} alt="Gallery 5" className='w-full h-full object-cover object-center overflow-hidden' />
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div className='bg-white flex w-full h-[182px] mt-1'>
             <img src={gallery6} alt="Gallery 6" className='w-full h-full object-cover object-center' />
           </div>
-          <div className='flex gap-2'>
+          <div className='flex gap-2 mt-1'>
             <div className='flex bg-white w-[275px] h-[142px]'>
               <img src={gallery7} alt="Gallery 7" className='w-full h-full object-cover object-center' />
             </div>

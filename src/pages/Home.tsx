@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import BrideGroom from './BrideGroom';
-import Countdown from './Countdown';
 import Gallery from './Gallery';
 import Invitation from './Invitation';
 import LoveStory from './LoveStory';
@@ -30,10 +29,6 @@ const Home = () => {
       <Audio src={bgm} volume={0.5} />
       <section className='w-full max-w-md' id="invitation">
         <Invitation />
-      </section>
-
-      <section className='w-full max-w-md' id="countdown">
-        <Countdown />
       </section>
 
       <section className='w-full max-w-md' id="bridegroom">

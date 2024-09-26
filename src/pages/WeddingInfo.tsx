@@ -10,11 +10,54 @@ import InfiniteSlider from '../components/Carrousel';
 import bottomLeft from '../assets/images/bottomLeft.webp'
 import bottomRight from '../assets/images/bottomRight.webp'
 import middleBottom from '../assets/images/middleBottom.webp'
+import { useState, useRef, useEffect } from 'react';
 
 
 const WeddingInfo = () => {
+  const [visibleItems, setVisibleItems] = useState<boolean[]>(Array(6).fill(false));
+  const observerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Set visibility with a staggered timeout
+          visibleItems.forEach((_, index) => {
+            setTimeout(() => {
+              setVisibleItems((prev) => {
+                const newVisibleItems = [...prev];
+                newVisibleItems[index] = true; // Fade in
+                return newVisibleItems;
+              });
+            }, index * 1500); // Adjust timing as needed
+          });
+        } else {
+          // Handle fade out
+          setVisibleItems((prev) =>
+            prev.map((_, index) => {
+              return false; // This will trigger fade-out animations
+            })
+          );
+        }
+      },
+      {
+        threshold: 0.1, // Trigger when 10% of the element is visible
+      }
+    );
+
+    if (observerRef.current) {
+      observer.observe(observerRef.current);
+    }
+
+    return () => {
+      if (observerRef.current) {
+        observer.unobserve(observerRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="relative w-full min-h-screen bg-maroon">
+    <div className="relative w-full min-h-screen bg-maroon" ref={observerRef}>
       <div className="relative min-h-screen flex flex-col items-center">
         <div className='absolute flex inset-x-0 justify-between items-start z-10'>
           <img className='w-[46px] h-[109px]' src={topRoseLeft} />
@@ -24,11 +67,11 @@ const WeddingInfo = () => {
           <img className='w-[46px] h-[109px]' src={topRoseRight} />
         </div>
         <div className='flex flex-col bg-white rounded-[4rem] mx-2 p-3 items-center mt-14'>
-          <div className='font-the-seasons text-3xl text-maroon z-10'>Save The Date</div>
+          <div className={`font-the-seasons text-3xl text-maroon z-10 ${visibleItems[0] ? 'fade-in fade-in-slide-up' : 'fade-out-slide-up'}`}>Save The Date</div>
           <div>
-            <img src={infoImg} alt="Image" className='opacity-70 -mt-4' />
+            <img src={infoImg} alt="Image" className={`opacity-70 -mt-4 ${visibleItems[0] ? 'fade-in fade-in-slide-up' : 'fade-out-slide-up'}`} />
           </div>
-          <div className="flex justify-center items-center mt-5 text-maroon">
+          <div className={`flex justify-center items-center mt-5 text-maroon ${visibleItems[1] ? 'fade-in fade-in-slide-up' : 'fade-out-slide-up'}`}>
             {/* Left section */}
             <div className="flex items-center justify-center mr-4 italic w-[70px] border-y h-8 border-maroon">
               <div className="text-xs font-cardo">MINGGU</div>
@@ -51,12 +94,12 @@ const WeddingInfo = () => {
               <div className="text-xs font-cardo">SUKABUMI</div>
             </div>
           </div>
-          <div className="relative w-[335px] h-[71px] mt-5">
+          <div className={`relative w-[335px] h-[71px] mt-5 ${visibleItems[2] ? 'fade-in fade-in-slide-up' : 'fade-out-slide-up'}`}>
             {/* Gambar sebagai latar belakang */}
             <img src={frame} alt="Frame" className="object-cover" />
 
             {/* Elemen teks yang tumpang tindih dengan gambar */}
-            <div className="absolute inset-0 flex justify-between items-center px-10 font-cardo">
+            <div className={`absolute inset-0 flex justify-between items-center px-10 font-cardo ${visibleItems[2] ? 'fade-in fade-in-slide-up' : 'fade-out-slide-up'}`}>
               {/* Elemen A di kiri */}
               <div className="flex flex-col text-maroon text-center items-center justify-center gap-0">
                 <div className='text-black'>Akad Nikah</div>
@@ -70,7 +113,7 @@ const WeddingInfo = () => {
               </div>
             </div>
           </div>
-          <div className='flex mt-5 items-center gap-2'>
+          <div className={`flex mt-5 items-center gap-2 ${visibleItems[3] ? 'fade-in fade-in-slide-up' : 'fade-out-slide-up'}`}>
             <img src={houseIcon} alt="House Icon" className='w-14 h-12' />
             <div className='flex flex-col justify-center'>
               <div className='font-cardo text-xs'>Bertempat di kediaman mempelai wanita</div>

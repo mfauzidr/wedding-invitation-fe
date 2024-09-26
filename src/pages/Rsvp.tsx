@@ -144,9 +144,9 @@ const Rsvp = () => {
       <div className='absolute flex inset-x-0 bottom-0 justify-between items-end z-10'>
         <img className='w-[46px] h-[109px]' src={bottomLeft} alt="Bottom Left" />
         <div className='font-cardo text-white text-sm flex justify-between w-full mx-14 mb-1'>
-          <div className='flex'>Website by: Fauzi</div>
-          <div className='flex'> - </div>
-          <div className='flex'>Design By: Fauriza</div>
+          <div className='flex text-xs md:text-base'>Website by: Fauzi</div>
+          <div className='flex text-xs md:text-base'> - </div>
+          <div className='flex text-xs md:text-base'>Design By: Fauriza</div>
         </div>
         <img className='w-[46px] h-[109px]' src={bottomRight} alt="Bottom Right" />
       </div>

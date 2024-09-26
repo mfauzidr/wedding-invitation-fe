@@ -8,10 +8,53 @@ import img2020 from '../assets/images/2020.webp'
 import img2021 from '../assets/images/2021.webp'
 import img2024 from '../assets/images/2024.webp'
 import middleBottom from '../assets/images/middleBottom.webp'
+import { useState, useRef, useEffect } from 'react'
 
 const LoveStory = () => {
+  const [visibleItems, setVisibleItems] = useState<boolean[]>(Array(6).fill(false));
+  const observerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Set visibility with a staggered timeout
+          visibleItems.forEach((_, index) => {
+            setTimeout(() => {
+              setVisibleItems((prev) => {
+                const newVisibleItems = [...prev];
+                newVisibleItems[index] = true; // Fade in
+                return newVisibleItems;
+              });
+            }, index * 1500); // Adjust timing as needed
+          });
+        } else {
+          // Handle fade out
+          setVisibleItems((prev) =>
+            prev.map((_, index) => {
+              return false; // This will trigger fade-out animations
+            })
+          );
+        }
+      },
+      {
+        threshold: 0.1, // Trigger when 10% of the element is visible
+      }
+    );
+
+    if (observerRef.current) {
+      observer.observe(observerRef.current);
+    }
+
+    return () => {
+      if (observerRef.current) {
+        observer.unobserve(observerRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className='relative w-full min-h-screen'>
+    <div className='relative w-full min-h-screen' ref={observerRef}>
       {/* Background Image with Opacity */}
       <div className="absolute inset-0 max-w-md min-h-screen overflow-hidden">
         <img src={bg} className="w-full h-full object-cover object-bottom bottom-0 scale-125 overflow-hidden inset-" alt="Background" />
@@ -28,11 +71,11 @@ const LoveStory = () => {
           <img className='w-[46px] h-[109px]' src={topRoseRight} />
         </div>
         {/* Header Section */}
-        <div className='font-cinzel-decorative mt-16 text-white text-3xl py-2 border-y z-10'>Our Story</div>
+        <div className={`font-cinzel-decorative mt-16 text-white text-3xl py-2 border-y z-10 ${visibleItems[0] ? 'fade-in fade-in-slide-left' : 'fade-out-slide-left'}`}>Our Story</div>
 
         {/* Text Section */}
         <div className='flex flex-col gap-6 font-cardo italic text-white mx-8 text-xl/[22px] z-10'>
-          <div className='flex flex-col justify-center'>
+          <div className={`flex flex-col justify-center ${visibleItems[1] ? 'fade-in fade-in-slide-left' : 'fade-out-slide-left'}`}>
             <div className='flex items-center'>
               <img src={img2015} className='w-[30px] h-[30px]' alt="" />
               <div className='ml-2'>2015</div>
@@ -42,30 +85,30 @@ const LoveStory = () => {
             </div>
             <div className='border border-white w-3/5'></div>
           </div>
-          <div className='flex flex-col justify-center'>
+          <div className={`flex flex-col justify-center ${visibleItems[2] ? 'fade-in fade-in-slide-left' : 'fade-out-slide-left'}`}>
             <div className='flex items-center'>
               <img src={img2020} className='w-[30px] h-[30px]' alt="" />
-              <div className='ml-2'>2015</div>
+              <div className='ml-2'>2020</div>
             </div>
             <div className='pb-4 pt-1'>
               Setelah berpacaran selama 5 tahun, kami menemukan masalah besar yang tidak bisa kami selesaikan dengan baik kali ini..
             </div>
             <div className='border border-white w-3/5'></div>
           </div>
-          <div className='flex flex-col justify-center'>
+          <div className={`flex flex-col justify-center ${visibleItems[3] ? 'fade-in fade-in-slide-left' : 'fade-out-slide-left'}`}>
             <div className='flex items-center'>
               <img src={img2021} className='w-[30px] h-[30px]' alt="" />
-              <div className='ml-2'>2015</div>
+              <div className='ml-2'>2021</div>
             </div>
             <div className='pb-4 pt-1'>
               1,5 tahun berpisah menyadarkan kami bahwa tidak ada orang lain yang bisa menggantikan kami satu sama lain.
             </div>
             <div className='border border-white w-3/5'></div>
           </div>
-          <div className='flex flex-col justify-center'>
+          <div className={`flex flex-col justify-center ${visibleItems[4] ? 'fade-in fade-in-slide-left' : 'fade-out-slide-left'}`}>
             <div className='flex items-center'>
               <img src={img2024} className='w-[30px] h-[30px]' alt="" />
-              <div className='ml-2'>2015</div>
+              <div className='ml-2'>2024</div>
             </div>
             <div className='pb-4 pt-1'>
               Akhirnya jalan 9 tahun bersama kami memutuskan untuk ke jenjang yang       lebih serius.

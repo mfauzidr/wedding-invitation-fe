@@ -14,14 +14,18 @@ const WeddingGift: React.FC<WeddingGiftProps> = ({ onClose }) => {
   const [mandiriCopied, setMandiriCopied] = useState(false);
   const [shopeeCopied, setShopeeCopied] = useState(false);
 
-  const handleCopy = (text: string, setCopied: (value: boolean) => void) => {
+  const handleCopy = (event: React.MouseEvent<HTMLButtonElement>, text: string, setCopied: (value: boolean) => void) => {
+    event.stopPropagation(); // Mencegah propagasi event
     navigator.clipboard.writeText(text);
     setCopied(true);
   };
 
   return (
-    <div className="flex flex-col justify-center items-center p-3">
-      <div className='max-h-screen md:max-w-lg flex flex-col bg-red-100 rounded-[4rem] p-8 items-center w-full gap-4 overflow-hidden overflow-y-auto'>
+    <div className="flex flex-col justify-center items-center p-3 z-40" onClick={onClose}>
+      <div
+        className='max-h-screen md:max-w-lg flex flex-col bg-red-100 rounded-[4rem] p-8 items-center w-full gap-4 overflow-hidden overflow-y-auto'
+        onClick={(e) => e.stopPropagation()}  // Mencegah modal tertutup saat klik di dalam modal
+      >
         <div className="flex gap-14">
           <div className='font-the-seasons text-2xl text-maroon border-b border-maroon pb-1 items-center'>Wedding Gift</div>
           <div className='flex w-[42px] h-[42px]'>
@@ -44,7 +48,7 @@ const WeddingGift: React.FC<WeddingGiftProps> = ({ onClose }) => {
               <button
                 type='button'
                 className='flex items-center px-3 py-2 text-white'
-                onClick={() => handleCopy('3770504308', setBcaCopied)}
+                onClick={(event) => handleCopy(event, '3770504308', setBcaCopied)} // Menambahkan event
               >
                 <FeatherIcon icon="copy" className='w-6 h-6' />
                 <span className='ml-2 text-white'>{bcaCopied ? 'Copied!' : 'Copy'}</span>
@@ -67,7 +71,7 @@ const WeddingGift: React.FC<WeddingGiftProps> = ({ onClose }) => {
               <button
                 type='button'
                 className='flex items-center px-3 py-2 text-white'
-                onClick={() => handleCopy('1820013444682', setMandiriCopied)}
+                onClick={(event) => handleCopy(event, '1820013444682', setMandiriCopied)}
               >
                 <FeatherIcon icon="copy" className='w-6 h-6' />
                 <span className='ml-2 text-white'>{mandiriCopied ? 'Copied!' : 'Copy'}</span>
@@ -90,7 +94,7 @@ const WeddingGift: React.FC<WeddingGiftProps> = ({ onClose }) => {
               <button
                 type='button'
                 className='flex items-center px-3 py-2 text-white'
-                onClick={() => handleCopy('Fauriza - 085939714992, Perum Tiara Regency, Blok E no 53, Jl. Goalpara KM 4, Desa Limbangan, Kec. Sukaraja, Kab. Sukabumi.', setShopeeCopied)}
+                onClick={(event) => handleCopy(event, 'Fauriza - 085939714992, Perum Tiara Regency, Blok E no 53, Jl. Goalpara KM 4, Desa Limbangan, Kec. Sukaraja, Kab. Sukabumi.', setShopeeCopied)}
               >
                 <FeatherIcon icon="copy" className='w-6 h-6' />
                 <span className='ml-2 text-white'>{shopeeCopied ? 'Copied!' : 'Copy'}</span>

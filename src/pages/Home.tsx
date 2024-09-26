@@ -10,16 +10,13 @@ import WeddingInfo from './WeddingInfo';
 import Audio from '../components/Audio'
 import bgm from '../assets/music/right-here.mp3';
 
-interface Username {
-  username: string
-}
 
-const Home = ({ username }: Username) => {
+const Home = () => {
   return (
     <div className='flex flex-col w-full items-center bg-maroon overflow-x-hidden'>
       <Audio src={bgm} volume={0.5} />
       <section className='w-full max-w-md' id="invitation">
-        <Invitation username={username} />
+        <Invitation />
       </section>
 
       <section className='w-full max-w-md' id="countdown">

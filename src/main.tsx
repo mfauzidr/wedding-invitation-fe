@@ -11,15 +11,13 @@ import LoveStory from './pages/LoveStory';
 import Gallery from './pages/Gallery';
 import Rsvp from './pages/Rsvp';
 
-const username = 'Invited Person';
-
 
 const router = createBrowserRouter([
   {
-    path: `/`,
-    element: <Home username={username} />,
+    path: `:username`,
+    element: <Home />,
     children: [
-      { path: "invitation", element: <Invitation username={username} /> },
+      { path: "invitation", element: <Invitation /> },
       { path: "countdown", element: <Countdown /> },
       { path: "bridegroom", element: <BrideGroom /> },
       { path: "wedding-info", element: <WeddingInfo /> },

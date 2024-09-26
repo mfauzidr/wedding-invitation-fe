@@ -1,5 +1,5 @@
 // pages/Invitation.tsx
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import invitationImage from '../assets/images/image-2.webp';
 import topLeft from '../assets/images/topLeft.webp';
 import topRight from '../assets/images/topRight.webp';
@@ -8,13 +8,38 @@ import frame from '../assets/images/frameName.webp';
 import inviteButton from '../assets/images/inviteButton.webp';
 import bottomLeft from '../assets/images/bottomLeft.webp';
 import bottomRight from '../assets/images/bottomRight.webp';
+import axios from "axios";
+import { useParams } from 'react-router-dom';
 
-interface Username {
-  username: string;
-}
 
-const Invitation = ({ username }: Username) => {
+
+const Invitation = () => {
   const [isVisible, setIsVisible] = useState(true); // Local state to manage visibility
+  const [invitee, setInvitee] = useState('Invitee')
+
+  const { username } = useParams<{ username: string }>();
+
+  useEffect(() => {
+    const getPost = async (username: string) => {
+      try {
+        const res = await axios.get(`${import.meta.env.VITE_REACT_APP_API_URL}/guest/${username}`);
+        console.log(res.data.results[0]);
+        if (res.data && res.data.results && res.data.results.length > 0) {
+          setInvitee(res.data.results[0].name);
+        } else {
+          console.error("Invalid API response structure:", res.data);
+        }
+      } catch (error) {
+        console.error("Error fetching product data:", error);
+      }
+    };
+
+    if (username) {
+      getPost(username);
+    } else {
+      console.error("username is undefined");
+    }
+  }, [username]);
 
   const toggleInvitation = () => {
     setIsVisible((prev) => !prev); // Toggle the visibility state
@@ -46,7 +71,7 @@ const Invitation = ({ username }: Username) => {
           <p className='font-bellefair'>Kepada Yth. Bapak/Ibu/Sdra/i:</p>
           <img src={frame} className='w-[328px] h-[53px]' alt="Name Frame" />
           <div className='relative font-the-seasons text-white text-xl md:2xl -mt-[40px]'>
-            {username}
+            {invitee}
           </div>
           <div className='flex font-bellefair mt-6 text-xs/[8px]'>
             Mohon maaf bila ada salah penulisan nama / gelar.

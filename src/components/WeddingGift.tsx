@@ -21,7 +21,7 @@ const WeddingGift: React.FC<WeddingGiftProps> = ({ onClose }) => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center p-3 z-40" onClick={onClose}>
+    <div className="flex flex-col justify-center items-center p-3 mx-4 z-40" onClick={onClose}>
       <div
         className='max-h-screen md:max-w-lg flex flex-col bg-red-100 rounded-[4rem] p-8 items-center w-full gap-4 overflow-hidden overflow-y-auto'
         onClick={(e) => e.stopPropagation()}  // Mencegah modal tertutup saat klik di dalam modal

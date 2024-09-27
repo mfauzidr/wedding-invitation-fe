@@ -109,7 +109,7 @@ const Rsvp = () => {
           <option value="Tidak Hadir">Tidak Hadir</option>
           <option value="Masih Ragu">Masih Ragu</option>
         </select>
-        <div className='flex justify-between w-full font-cardo font-extrabold text-maroon tracking-wide px-6 mt-3'>
+        <div className='flex justify-between w-full font-cardo font-extrabold text-maroon tracking-wide px-6 mt-3 gap-2 md:gap-4'>
           <button
             type='submit'
             className='flex items-center justify-center bg-white border border-maroon outline outline-1 outline-white w-[135px] h-[41px] rounded-xl'

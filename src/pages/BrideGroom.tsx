@@ -122,11 +122,11 @@ const BrideGroom = () => {
         </div>
 
         {/* Bottom Decorations */}
-        <div className="absolute flex inset-x-0 bottom-0 justify-between items-end z-10">
-          <img className='w-[80px] h-[198px]' src={bottomLeft} />
-          <img className='w-[92px] mb-6' src={middleBottom} />
-          <img className='w-[80px] h-[198px]' src={bottomRight} />
-        </div>
+      </div>
+      <div className="absolute flex inset-x-0 bottom-0 justify-between items-end z-10">
+        <img className='w-[80px] h-[198px]' src={bottomLeft} />
+        <img className='w-[92px] mb-6' src={middleBottom} />
+        <img className='w-[80px] h-[198px]' src={bottomRight} />
       </div>
     </div>
   );

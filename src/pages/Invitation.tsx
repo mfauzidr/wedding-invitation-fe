@@ -11,10 +11,14 @@ import bottomLeft from '../assets/images/bottomLeft.webp';
 import bottomRight from '../assets/images/bottomRight.webp';
 import Countdown from './Countdown'; // Import Countdown component
 
-const Invitation = () => {
+interface InvitationProps {
+  audioRef: React.RefObject<HTMLAudioElement>; // Define prop type for audioRef
+}
+
+const Invitation = ({ audioRef }: InvitationProps) => {
   const [isVisible, setIsVisible] = useState(true);
   const [invitee, setInvitee] = useState('Invitee');
-  const [startCountdownAnimation, setStartCountdownAnimation] = useState(false); // State to trigger countdown animation
+  const [startCountdownAnimation, setStartCountdownAnimation] = useState(false);
 
   const { username } = useParams<{ username: string }>();
 
@@ -43,6 +47,13 @@ const Invitation = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setIsVisible((prev) => !prev);
     setStartCountdownAnimation(true); // Trigger animation
+
+    // Play audio when the button is clicked
+    if (audioRef.current) {
+      audioRef.current.play().catch((error) => {
+        console.error('Audio play failed:', error);
+      });
+    }
   };
 
   return (

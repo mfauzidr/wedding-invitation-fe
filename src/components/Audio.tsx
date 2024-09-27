@@ -3,7 +3,7 @@ import { useEffect, useRef, forwardRef, useImperativeHandle } from 'react';
 interface BGMProps {
   src: string;
   volume?: number;
-  autoplay?: boolean;
+  autoplay?: boolean; // Ensure this property is declared
 }
 
 const Audio = forwardRef<HTMLAudioElement, BGMProps>(({ src, volume = 0.5, autoplay = false }, ref) => {
@@ -21,15 +21,6 @@ const Audio = forwardRef<HTMLAudioElement, BGMProps>(({ src, volume = 0.5, autop
         audioRef.current.play().catch((error) => {
           console.error('Audio play failed:', error);
         });
-      } else {
-        // If autoplay is not enabled, restart autoplay after 3 seconds
-        const timer = setTimeout(() => {
-          audioRef.current?.play().catch((error) => {
-            console.error('Audio play failed after 3 seconds:', error);
-          });
-        }, 3000);
-
-        return () => clearTimeout(timer); // Clean up the timer on component unmount
       }
     }
   }, [volume, autoplay]);
@@ -40,8 +31,7 @@ const Audio = forwardRef<HTMLAudioElement, BGMProps>(({ src, volume = 0.5, autop
         <source src={src} type="audio/mp3" />
       </audio>
       {!autoplay && (
-        <button onClick={() => audioRef.current?.play()} className="play-button">
-          Play Audio
+        <button onClick={() => audioRef.current?.play()} className="play-button hidden">
         </button>
       )}
     </div>

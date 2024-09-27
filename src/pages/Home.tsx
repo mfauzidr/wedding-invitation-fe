@@ -15,7 +15,6 @@ const Home = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
-    // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 10000); // Adjust the time as needed
@@ -26,10 +25,10 @@ const Home = () => {
   return (
     <div className='flex flex-col w-full items-center bg-maroon overflow-x-hidden'>
       {isLoading && <Loading />}
-      <Audio ref={audioRef} src={bgm} volume={0.5} autoplay={false} /> {/* Set autoplay to false for testing */}
+      <Audio ref={audioRef} src={bgm} volume={0.5} autoplay={false} /> {/* No autoplay for testing */}
 
       <section className='w-full max-w-md' id="invitation">
-        <Invitation />
+        <Invitation audioRef={audioRef} /> {/* Pass the audioRef */}
       </section>
 
       <section className='w-full max-w-md' id="bridegroom">

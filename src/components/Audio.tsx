@@ -25,7 +25,7 @@ const Audio = forwardRef<HTMLAudioElement, BGMProps>(({ src, volume = 0.5 }, ref
 
   return (
     <div>
-      <button onClick={handlePlayAudio}>Play Audio</button>
+      <button onClick={handlePlayAudio} className='hidden'>Play Audio</button>
       <audio ref={audioRef} src={src} loop />
     </div>
   );

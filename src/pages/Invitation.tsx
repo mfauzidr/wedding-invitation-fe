@@ -10,6 +10,8 @@ import inviteButton from '../assets/images/inviteButton.webp';
 import bottomLeft from '../assets/images/bottomLeft.webp';
 import bottomRight from '../assets/images/bottomRight.webp';
 import Countdown from './Countdown'; // Import Countdown component
+import thumbImage from '../assets/images/thumbnail.webp';
+import { Helmet } from 'react-helmet'
 
 interface InvitationProps {
   audioRef: React.RefObject<HTMLAudioElement>; // Define prop type for audioRef
@@ -19,8 +21,10 @@ const Invitation = ({ audioRef }: InvitationProps) => {
   const [isVisible, setIsVisible] = useState(true);
   const [invitee, setInvitee] = useState('Invitee');
   const [startCountdownAnimation, setStartCountdownAnimation] = useState(false);
+  const [thumbnail, setThumbnail] = useState<string>('')
 
-  const { username } = useParams<{ username: string }>();
+  const { username } = useParams<{ username: string }>()
+    ;
 
   useEffect(() => {
     const getPost = async (username: string) => {
@@ -28,6 +32,7 @@ const Invitation = ({ audioRef }: InvitationProps) => {
         const res = await axios.get(`${import.meta.env.VITE_REACT_APP_API_URL}/guest/${username}`);
         if (res.data && res.data.results && res.data.results.length > 0) {
           setInvitee(res.data.results[0].name);
+          setThumbnail(thumbImage)
         } else {
           console.error("Invalid API response structure:", res.data);
         }
@@ -58,6 +63,13 @@ const Invitation = ({ audioRef }: InvitationProps) => {
 
   return (
     <div>
+      <Helmet>
+        <title>Fauzi & Fauriza's Wedding Invitation</title>
+        <meta property="og:title" content={`${invitee}'s Wedding Invitation`} />
+        <meta property="og:description" content={`You are invited to the wedding of ${invitee}.`} />
+        <meta property="og:image" content={thumbnail} />
+        <meta property="og:url" content={`https://our-happy-days.vercel.app/${username}`} />
+      </Helmet>
       <div
         className={`fixed inset-y-0 bg-maroon transition-transform duration-1000 ${isVisible ? '' : '-translate-x-full md:-translate-x-220'
           } flex flex-col w-full z-20 max-w-md`}

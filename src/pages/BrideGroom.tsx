@@ -104,7 +104,7 @@ const BrideGroom = () => {
 
         <div className="flex justify-between mx-2 md:mb-16">
           {/* The Bride and Description */}
-          <div className={`flex flex-col justify-between items-end max-h-[294px] text-3xl/[33px] ${visibleItems[3] ? 'fade-in fade-in-slide-left' : 'fade-out-slide-left'}`}>
+          <div className={`flex flex-col justify-between items-end max-h-[294px] text-3xl/[33px] ${visibleItems[3] ? 'fade-in fade-in-slide-left' : 'fade-out-slide-left'} z-20`}>
             <div className="font-great-vibes text-white border-b border-white text-center w-[155px] pt-5 mr-5 text-4.5xl">The Bride</div>
             <div className="flex flex-col bg-white w-[185px] text-right text-grey pt-[17px] pr-[17px] pb-[17px] pl-[4px] z-20">
               <div className='font-great-vibes text-xl/9'>Fauriza Prameswari G.</div>

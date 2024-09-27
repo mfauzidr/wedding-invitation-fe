@@ -1,4 +1,3 @@
-// Audio.tsx
 import { useEffect, useRef, forwardRef, useImperativeHandle } from 'react';
 
 interface BGMProps {
@@ -18,8 +17,15 @@ const Audio = forwardRef<HTMLAudioElement, BGMProps>(({ src, volume = 0.5 }, ref
     }
   }, [volume]);
 
+  const handlePlayAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.play(); // Trigger play on user interaction
+    }
+  };
+
   return (
-    <div className="hidden">
+    <div>
+      <button onClick={handlePlayAudio}>Play Audio</button>
       <audio ref={audioRef} src={src} loop />
     </div>
   );

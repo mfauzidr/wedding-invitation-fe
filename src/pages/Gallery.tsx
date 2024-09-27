@@ -36,7 +36,7 @@ const Gallery = () => {
         } else {
           // Handle fade out
           setVisibleItems((prev) =>
-            prev.map((_, index) => {
+            prev.map((_, _index) => {
               return false; // This will trigger fade-out animations
             })
           );

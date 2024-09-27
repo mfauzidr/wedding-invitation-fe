@@ -10,6 +10,7 @@ interface Comments {
 
 const CommentSection: React.FC<{ triggerFetch: boolean }> = ({ triggerFetch }) => {
   const [posts, setPosts] = useState<Comments[]>([]);
+  const [summary, setSummary] = useState<{ hadir: number, tidakHadir: number, masihRagu: number } | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const fetchComments = async () => {
@@ -17,6 +18,7 @@ const CommentSection: React.FC<{ triggerFetch: boolean }> = ({ triggerFetch }) =
       const url = `${import.meta.env.VITE_REACT_APP_API_URL}/attendance/`;
       const res = await axios.get(url);
       setPosts(res.data.results);
+      setSummary(res.data.attendanceSummary);
     } catch (err) {
       setError('Failed to fetch comments. Please try again later.');
     }
@@ -48,6 +50,7 @@ const CommentSection: React.FC<{ triggerFetch: boolean }> = ({ triggerFetch }) =
   };
 
   // Function to format the created_at timestamp
+
   const formatTimeAgo = (createdAt: string) => {
     const createdTime = new Date(createdAt).getTime();
     const currentTime = new Date().getTime();
@@ -81,6 +84,17 @@ const CommentSection: React.FC<{ triggerFetch: boolean }> = ({ triggerFetch }) =
   return (
     <div className="max-h-1/5 bg-white rounded-xl py-5 px-2">
       <h1 className="text-center text-xl font-bold text-maroon">Comments Section</h1>
+      <div className='flex justify-center text-sm font-cardo text-maroon mt-2 gap-2 md:gap-4'>
+        <div className='flex'>
+          <div>Hadir : {summary?.hadir}</div>
+        </div>
+        <div className='flex'>
+          <div>Tidak Hadir : {summary?.tidakHadir}</div>
+        </div>
+        <div className='flex'>
+          <div>Masih Ragu : {summary?.masihRagu}</div>
+        </div>
+      </div>
       {error && <p className="text-red-500">{error}</p>}
       {!error && (
         <div className="max-w-lg max-h-[440px] mx-auto mt-6 overflow-y-scroll">

@@ -22,7 +22,6 @@ const Invitation = () => {
     const getPost = async (username: string) => {
       try {
         const res = await axios.get(`${import.meta.env.VITE_REACT_APP_API_URL}/guest/${username}`);
-        console.log(res.data.results[0]);
         if (res.data && res.data.results && res.data.results.length > 0) {
           setInvitee(res.data.results[0].name);
         } else {

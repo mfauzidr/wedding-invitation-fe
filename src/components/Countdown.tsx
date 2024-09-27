@@ -36,7 +36,6 @@ const Count: React.FC = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       const newTimeLeft = calculateTimeLeft();
-      console.log(newTimeLeft); // Check if this logs every second
       setTimeLeft(newTimeLeft);
     }, 1000);
 

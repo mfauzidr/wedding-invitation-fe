@@ -1,33 +1,16 @@
-import React, { useEffect, useRef } from 'react';
+// Audio.tsx
+import { useEffect, useRef, forwardRef, useImperativeHandle } from 'react';
 
 interface BGMProps {
   src: string;
-  volume?: number; // Optional: default volume
+  volume?: number;
 }
 
-const Audio: React.FC<BGMProps> = ({ src, volume = 0.5 }) => {
+const Audio = forwardRef<HTMLAudioElement, BGMProps>(({ src, volume = 0.5 }, ref) => {
   const audioRef = useRef<HTMLAudioElement>(null);
 
-  useEffect(() => {
-    const playAudio = async () => {
-      if (audioRef.current) {
-        try {
-          await audioRef.current.play();
-          console.log("Autoplay succeeded");
-        } catch (error) {
-          console.error("Autoplay failed:", error);
-          // Optionally retry after a delay
-          setTimeout(() => {
-            audioRef.current?.play().catch((retryError) => {
-              console.error("Retrying autoplay failed:", retryError);
-            });
-          }, 1000); // Retry after 3 seconds
-        }
-      }
-    };
-
-    playAudio();
-  }, []);
+  // Expose the audioRef to the parent component via the ref
+  useImperativeHandle(ref, () => audioRef.current as HTMLAudioElement);
 
   useEffect(() => {
     if (audioRef.current) {
@@ -40,6 +23,6 @@ const Audio: React.FC<BGMProps> = ({ src, volume = 0.5 }) => {
       <audio ref={audioRef} src={src} loop />
     </div>
   );
-};
+});
 
 export default Audio;

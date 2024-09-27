@@ -1,5 +1,5 @@
-// pages/Home.tsx
-import { useEffect, useState } from 'react';
+// Home.tsx
+import { useEffect, useRef, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import BrideGroom from './BrideGroom';
 import Gallery from './Gallery';
@@ -13,11 +13,18 @@ import Loading from '../components/Loading';
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
     // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoading(false);
+      // Play audio after loading completes
+      if (audioRef.current) {
+        audioRef.current.play().catch((error) => {
+          console.error('Audio play failed:', error);
+        });
+      }
     }, 10000); // Adjust the time as needed
 
     return () => clearTimeout(timer);
@@ -26,7 +33,7 @@ const Home = () => {
   return (
     <div className='flex flex-col w-full items-center bg-maroon overflow-x-hidden'>
       {isLoading && <Loading />}
-      <Audio src={bgm} volume={0.5} />
+      <Audio ref={audioRef} src={bgm} volume={0.5} />
       <section className='w-full max-w-md' id="invitation">
         <Invitation />
       </section>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 interface TimeLeft {
   days: number;
@@ -9,7 +9,7 @@ interface TimeLeft {
 
 const Count: React.FC = () => {
   const calculateTimeLeft = (): TimeLeft => {
-    const eventDate = new Date('2024-10-06T00:00:00'); // Example target date
+    const eventDate = new Date("2025-01-28T00:00:00"); // Example target date
     const now = new Date();
     const difference = eventDate.getTime() - now.getTime();
 
@@ -49,8 +49,12 @@ const Count: React.FC = () => {
           key={index}
           className="bg-white bg-opacity-80 rounded-lg p-2 w-[70px] h-[80px] text-center shadow-md"
         >
-          <p className="text-maroon text-3xl font-bold">{timeLeft[interval as keyof TimeLeft]}</p>
-          <p className="text-maroon text-md mt-1">{interval.charAt(0).toUpperCase() + interval.slice(1)}</p>
+          <p className="text-maroon text-3xl font-bold">
+            {timeLeft[interval as keyof TimeLeft]}
+          </p>
+          <p className="text-maroon text-md mt-1">
+            {interval.charAt(0).toUpperCase() + interval.slice(1)}
+          </p>
         </div>
       ))}
     </div>

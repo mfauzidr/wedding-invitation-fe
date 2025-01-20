@@ -1,5 +1,5 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 interface Comments {
   name: string;
@@ -8,9 +8,15 @@ interface Comments {
   attendance: string;
 }
 
-const CommentSection: React.FC<{ triggerFetch: boolean }> = ({ triggerFetch }) => {
+const CommentSection: React.FC<{ triggerFetch: boolean }> = ({
+  triggerFetch,
+}) => {
   const [posts, setPosts] = useState<Comments[]>([]);
-  const [summary, setSummary] = useState<{ hadir: number, tidakHadir: number, masihRagu: number } | null>(null);
+  const [summary, setSummary] = useState<{
+    hadir: number;
+    tidakHadir: number;
+    masihRagu: number;
+  } | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const fetchComments = async () => {
@@ -20,7 +26,7 @@ const CommentSection: React.FC<{ triggerFetch: boolean }> = ({ triggerFetch }) =
       setPosts(res.data.results);
       setSummary(res.data.attendanceSummary);
     } catch (err) {
-      setError('Failed to fetch comments. Please try again later.');
+      setError("Failed to fetch comments. Please try again later.");
     }
   };
 
@@ -30,7 +36,6 @@ const CommentSection: React.FC<{ triggerFetch: boolean }> = ({ triggerFetch }) =
 
   useEffect(() => {
     if (triggerFetch) {
-
       fetchComments(); // Re-fetch comments when triggerFetch changes
     }
   }, [triggerFetch]);
@@ -38,14 +43,14 @@ const CommentSection: React.FC<{ triggerFetch: boolean }> = ({ triggerFetch }) =
   // Function to determine dot color based on attendance
   const getDotColor = (attendance: string) => {
     switch (attendance) {
-      case 'Hadir':
-        return 'bg-blue-500'; // Blue for 'Hadir'
-      case 'Tidak Hadir':
-        return 'bg-red-500'; // Red for 'Tidak Hadir'
-      case 'Masih Ragu':
-        return 'bg-gray-200'; // Gray for 'Masih Ragu'
+      case "Hadir":
+        return "bg-blue-500"; // Blue for 'Hadir'
+      case "Tidak Hadir":
+        return "bg-red-500"; // Red for 'Tidak Hadir'
+      case "Masih Ragu":
+        return "bg-gray-200"; // Gray for 'Masih Ragu'
       default:
-        return 'bg-gray-200'; // Default to gray
+        return "bg-gray-200"; // Default to gray
     }
   };
 
@@ -63,7 +68,7 @@ const CommentSection: React.FC<{ triggerFetch: boolean }> = ({ triggerFetch }) =
     const months = Math.floor(days / 30);
 
     if (seconds < 5) {
-      return 'Just now';
+      return "Just now";
     } else if (seconds < 60) {
       return `${seconds} s ago`;
     } else if (minutes < 60) {
@@ -82,16 +87,18 @@ const CommentSection: React.FC<{ triggerFetch: boolean }> = ({ triggerFetch }) =
   };
 
   return (
-    <div className="max-h-1/5 bg-white rounded-xl py-5 px-2">
-      <h1 className="text-center text-xl font-bold text-maroon">Comments Section</h1>
-      <div className='flex justify-center text-sm font-cardo text-maroon mt-2 gap-2 md:gap-4'>
-        <div className='flex'>
+    <div className="max-h-1/5 bg-white rounded-xl py-5 px-2 hidden">
+      <h1 className="text-center text-xl font-bold text-maroon">
+        Comments Section
+      </h1>
+      <div className="flex justify-center text-sm font-cardo text-maroon mt-2 gap-2 md:gap-4">
+        <div className="flex">
           <div>Hadir : {summary?.hadir}</div>
         </div>
-        <div className='flex'>
+        <div className="flex">
           <div>Tidak Hadir : {summary?.tidakHadir}</div>
         </div>
-        <div className='flex'>
+        <div className="flex">
           <div>Masih Ragu : {summary?.masihRagu}</div>
         </div>
       </div>
@@ -105,10 +112,16 @@ const CommentSection: React.FC<{ triggerFetch: boolean }> = ({ triggerFetch }) =
             >
               <div className="flex items-center mb-2">
                 {/* Dynamically set the dot color based on attendance */}
-                <div className={`w-2 h-2 rounded-full mr-3 ${getDotColor(comment.attendance)}`}></div>
+                <div
+                  className={`w-2 h-2 rounded-full mr-3 ${getDotColor(
+                    comment.attendance
+                  )}`}
+                ></div>
                 <div>
                   <p className="font-semibold">{comment.name}</p>
-                  <p className="text-sm text-gray-500">{formatTimeAgo(comment.created_at)}</p>
+                  <p className="text-sm text-gray-500">
+                    {formatTimeAgo(comment.created_at)}
+                  </p>
                 </div>
               </div>
               <p>{comment.message}</p>
